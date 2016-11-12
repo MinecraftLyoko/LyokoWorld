@@ -1,17 +1,17 @@
 # config file
 debug: false
 storage:
-  database: sqlite
+  database: mysql
   mysql:
-    url: mysql://localhost:3306/TARDIS
-    user: bukkit
-    password: mysecurepassword
+    url: mysql://lyokotech.com:3306/TARDIS
+    user: steve
+    password: steveandbob
     prefix: ''
 creation:
   create_worlds: false
   create_worlds_with_perms: false
   default_world: true
-  default_world_name: TARDIS_TimeVortex
+  default_world_name: TimeVortex
   tips_limit: 400
   border_radius: 256
   gamemode: survival
@@ -22,10 +22,10 @@ creation:
   custom_schematic_seed: OBSIDIAN
   custom_creeper_id: BEACON
   use_block_stack: false
-  use_clay: false
+  use_clay: true
   count: 0
   sky_biome: true
-  area: none
+  area: Gallifrey
 police_box:
   default_preset: NEW
   name_tardis: false
@@ -66,7 +66,7 @@ preferences:
   language: en
   key: GOLD_NUGGET
   walk_in_tardis: true
-  open_door_policy: false
+  open_door_policy: true
   use_worldguard: true
   respect_worldguard: build
   respect_towny: nation
@@ -94,7 +94,7 @@ preferences:
   spawn_random_monsters: true
   spawn_limit: 10
   no_creative_condense: false
-  vortex_fall: kill
+  vortex_fall: teleport
 desktop:
   check_blocks_before_upgrade: false
   block_change_percent: 25
@@ -173,4 +173,4 @@ worlds:
   Lyoko: true
   Lyoko_nether: true
   Lyoko_the_end: true
-  TARDIS_TimeVortex: false
+  TimeVortex: false

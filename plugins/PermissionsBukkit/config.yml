@@ -28,15 +28,11 @@
 # signify color codes.
 
 users:
-    ConspiracyWizard:
-        permissions:
-            permissions.example: true
-        groups:
-        - admin
+    
 groups:
     default:
         permissions:
-            permissions.build: false
+            permissions.build: true
     admin:
         permissions:
             permissions.*: true
@@ -44,13 +40,9 @@ groups:
         - user
     user:
         permissions:
-            permissions.build: true
-        worlds:
-            creative:
-                coolplugin.item: true
         inheritance:
         - default
 messages:
-    build: '&cYou do not have permission to build here.'
+    build: '&c[Permissions] You do not have permission to build here.'
 
 debug: false
