@@ -57,7 +57,7 @@ travel:
   per_world_perms: false
   terminal_step: 1
   manual_flight_delay: 60
-  grace_period: 10
+  grace_period: 0
   random_circuit:
     x: 5000
     z: 5000
