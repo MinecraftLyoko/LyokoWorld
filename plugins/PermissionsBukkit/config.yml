@@ -21,28 +21,43 @@
 # groups. Like user permissions, groups may override the permissions of their
 # parent group(s). Unlike users, groups do NOT automatically inherit from
 # default. World permissions may be assigned to groups with a 'worlds:' entry.
-#
-# The cannot-build message is configurable. If it is left blank, no message
-# will be displayed to the player if PermissionsBukkit prevents them from
-# building, digging, or interacting with a block. Use '&' characters to
-# signify color codes.
-
-users:
-    
 groups:
-    default:
-        permissions:
-            permissions.build: true
-    admin:
-        permissions:
-            permissions.*: true
-        inheritance:
-        - user
-    user:
-        permissions:
-        inheritance:
-        - default
+  default:
+    permissions:
+      permissions.build: true
+  admin:
+    permissions:
+      permissions.*: true
+      tardis.*: true
+      tardis.timetravel.*: true
+      tardis.area.*: true
+    inheritance:
+    - user
+  user:
+    inheritance:
+    - default
+    permissions:
+      tardis.use: true
+      tardis.build: true
+      tardis.timetravel: true
+      tardis.area.Gallifrey: true
+      wormhole.use.dialer: true
+      wormhole.go: true
+      wormhole.network.use: true
+      wormhole.network.use.*: true
+      tardis.budget: true
+      tardis.kit.join: true
+      tardis.create: true
+      tardis.timetravel.biome: true
 messages:
-    build: '&c[Permissions] You do not have permission to build here.'
-
+  build: '&c[Permissions] You do not have permission to build here.'
 debug: false
+users:
+  51bae5ec-6df7-40f9-8765-f94e9bf1287b:
+    groups:
+    - admin
+    name: SerenadeX
+  e097fb42-61f5-4c91-af48-f5acad8619f0:
+    groups:
+    - user
+    name: Shrinkbuddy

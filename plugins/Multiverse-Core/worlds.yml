@@ -2,7 +2,7 @@ worlds:
   Lyoko:
     ==: MVWorld
     hidden: 'false'
-    alias: ''
+    alias: Lyoko
     color: WHITE
     style: NORMAL
     pvp: 'true'
@@ -34,11 +34,11 @@ worlds:
     keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation
-      x: 161.5
-      y: 65.0
-      z: 547.5
-      pitch: 0.0
-      yaw: 0.0
+      x: 161.4006571844864
+      y: 73.0
+      z: 549.7841220837198
+      pitch: 3.6000564
+      yaw: -178.34473
     autoLoad: 'true'
     bedRespawn: 'true'
     worldBlacklist: []
