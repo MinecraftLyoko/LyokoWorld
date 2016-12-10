@@ -30,7 +30,7 @@ worlds:
     autoHeal: 'true'
     adjustSpawn: 'true'
     portalForm: ALL
-    gameMode: SURVIVAL
+    gameMode: CREATIVE
     keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation
@@ -78,7 +78,7 @@ worlds:
     autoHeal: 'true'
     adjustSpawn: 'true'
     portalForm: ALL
-    gameMode: SURVIVAL
+    CREATIVE: CREATIVE
     keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation
@@ -126,7 +126,7 @@ worlds:
     autoHeal: 'true'
     adjustSpawn: 'false'
     portalForm: NONE
-    gameMode: SURVIVAL
+    gameMode: CREATIVE
     keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation
@@ -174,7 +174,7 @@ worlds:
     autoHeal: 'true'
     adjustSpawn: 'true'
     portalForm: ALL
-    gameMode: SURVIVAL
+    gameMode: CREATIVE
     keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation
