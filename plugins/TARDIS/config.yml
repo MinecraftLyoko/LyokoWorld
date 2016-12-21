@@ -25,7 +25,7 @@ creation:
   use_clay: false
   count: 0
   sky_biome: true
-  area: none
+  area: Gallifrey
 police_box:
   default_preset: FACTORY
   name_tardis: false
