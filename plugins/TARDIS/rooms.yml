@@ -155,3 +155,15 @@ rooms:
     offset: -4
     seed: WOOD_BUTTON
     user: false
+  STALL:
+    user: false
+    enabled: true
+    offset: -4
+    cost: 350
+    seed: NETHER_WART_BLOCK
+  SMELTER:
+    enabled: true
+    user: false
+    offset: -4
+    cost: 750
+    seed: CHEST

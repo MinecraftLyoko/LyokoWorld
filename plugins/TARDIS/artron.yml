@@ -41,6 +41,14 @@ upgrades:
   twelfth: 7500
   war: 5000
   custom: 10000
+  archive:
+    tall: 10000
+    small: 5000
+    medium: 7500
+  template:
+    medium: 2500
+    small: 1666
+    tall: 3333
 just_wall_floor: 50
 artron_furnace:
   burn_limit: 100000

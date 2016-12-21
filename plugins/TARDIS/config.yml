@@ -27,7 +27,7 @@ creation:
   sky_biome: true
   area: Gallifrey
 police_box:
-  default_preset: NEW
+  default_preset: FACTORY
   name_tardis: false
   wall_id: 35
   wall_data: 11
@@ -41,7 +41,6 @@ travel:
   include_default_world: false
   tp_radius: 500
   max_distance: 29999983
-  chameleon: true
   give_key: false
   the_end: false
   nether: false
@@ -111,7 +110,6 @@ circuits:
     scanner: 20
     temporal: 20
 allow:
-  abandon: true
   mob_farming: true
   spawn_eggs: true
   emergency_npc: false
@@ -132,6 +130,7 @@ allow:
   3d_doors: false
   village_travel: false
   perception_filter: true
+  repair: true
 growth:
   gravity_max_distance: 15
   gravity_max_velocity: 5
@@ -168,9 +167,13 @@ conversions:
   companion_clearing_done: true
   condenser_done: true
   lastknownname_conversion_done: true
+  constructs_done: false
 rechargers: {}
 worlds:
   Lyoko: true
   Lyoko_nether: true
   Lyoko_the_end: true
   TimeVortex: false
+archive:
+  enabled: true
+  limit: 3

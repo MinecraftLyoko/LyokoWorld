@@ -57,3 +57,35 @@ POWER: (Optional) power block
 SAVE: Save construct
 USE_PREV: Use last saved construct
 VIEW_TEMP: View example template
+DISABLED: DISABLED
+ADAPT: Adaptive
+INVISIBLE: Invisible
+CONSTRUCT: Construct
+APPLY: Apply
+BACK_CHAM_OPTS: Back to Chameleon Circuit
+SHORT: Shorted out
+ADAPT_LORE:
+- The Chameleon Circuit
+- will choose a preset
+- that blends in with
+- the environment.
+- Use BIOME or BLOCK mode.
+SHORT_LORE:
+- Make the Chameleon
+- Circuit malfunction and
+- always choose the
+- same appearance.
+APPLY_LORE:
+- Rebuild the TARDIS
+- exterior with the
+- current settings.
+DISABLED_LORE:
+- Disable the Chameleon
+- Circuit and revert
+- to the FACTORY preset.
+CONSTRUCT_LORE:
+- Build your own
+- Chameleon preset.
+INVISIBLE_LORE:
+- Engages the TARDIS
+- Invisiblity Circuit.
