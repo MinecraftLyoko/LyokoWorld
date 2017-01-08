@@ -61,3 +61,8 @@ users:
     groups:
     - user
     name: Shrinkbuddy
+  5f435d0e-08cf-49be-854e-2b6897a519b1:
+    permissions:
+      tardis.*: true
+      tardis.create: true
+    name: finiex_black

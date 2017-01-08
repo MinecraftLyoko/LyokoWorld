@@ -30,15 +30,15 @@ worlds:
     autoHeal: 'true'
     adjustSpawn: 'true'
     portalForm: ALL
-    gameMode: CREATIVE
+    gameMode: SURVIVAL
     keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation
-      x: 161.4006571844864
+      x: 161.59627635997322
       y: 73.0
-      z: 549.7841220837198
-      pitch: 3.6000564
-      yaw: -178.34473
+      z: 549.693647286918
+      pitch: 90.0
+      yaw: -181.49568
     autoLoad: 'true'
     bedRespawn: 'true'
     worldBlacklist: []
@@ -50,7 +50,7 @@ worlds:
   Lyoko_nether:
     ==: MVWorld
     hidden: 'false'
-    alias: ''
+    alias: Lyoko_nether
     color: WHITE
     style: NORMAL
     pvp: 'true'
@@ -126,7 +126,7 @@ worlds:
     autoHeal: 'true'
     adjustSpawn: 'false'
     portalForm: NONE
-    gameMode: CREATIVE
+    gameMode: SURVIVAL
     keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation
@@ -174,7 +174,7 @@ worlds:
     autoHeal: 'true'
     adjustSpawn: 'true'
     portalForm: ALL
-    gameMode: CREATIVE
+    gameMode: SURVIVAL
     keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation
@@ -222,7 +222,7 @@ worlds:
     autoHeal: 'true'
     adjustSpawn: 'false'
     portalForm: NONE
-    gameMode: CREATIVE
+    gameMode: SURVIVAL
     keepSpawnInMemory: 'true'
     spawnLocation:
       ==: MVSpawnLocation

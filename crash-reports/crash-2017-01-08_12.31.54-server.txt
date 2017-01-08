@@ -1,0 +1,249 @@
+---- Minecraft Crash Report ----
+// Sorry :(
+
+Time: 1/8/17 12:31 PM
+Description: Watching Server
+
+java.lang.Error
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:170)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at com.mysql.jdbc.util.ReadAheadInputStream.fill(ReadAheadInputStream.java:101)
+	at com.mysql.jdbc.util.ReadAheadInputStream.readFromUnderlyingStreamIfNecessary(ReadAheadInputStream.java:144)
+	at com.mysql.jdbc.util.ReadAheadInputStream.read(ReadAheadInputStream.java:174)
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:3001)
+	at com.mysql.jdbc.MysqlIO.readPacket(MysqlIO.java:567)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1018)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2253)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2104)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2088)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2533)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2503)
+	at com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:1369)
+	at me.eccentric_nz.TARDIS.database.ResultSetOccupied.resultSet(ResultSetOccupied.java:69)
+	at me.eccentric_nz.TARDIS.control.TARDISControlRunnable.run(TARDISControlRunnable.java:43)
+	at org.bukkit.craftbukkit.v1_11_R1.scheduler.CraftTask.run(CraftTask.java:53)
+	at org.bukkit.craftbukkit.v1_11_R1.scheduler.CraftScheduler.mainThreadHeartbeat(CraftScheduler.java:352)
+	at net.minecraft.server.v1_11_R1.MinecraftServer.D(MinecraftServer.java:689)
+	at net.minecraft.server.v1_11_R1.DedicatedServer.D(DedicatedServer.java:360)
+	at net.minecraft.server.v1_11_R1.MinecraftServer.C(MinecraftServer.java:650)
+	at net.minecraft.server.v1_11_R1.MinecraftServer.run(MinecraftServer.java:554)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server Watchdog
+Stacktrace:
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:170)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at com.mysql.jdbc.util.ReadAheadInputStream.fill(ReadAheadInputStream.java:101)
+	at com.mysql.jdbc.util.ReadAheadInputStream.readFromUnderlyingStreamIfNecessary(ReadAheadInputStream.java:144)
+	at com.mysql.jdbc.util.ReadAheadInputStream.read(ReadAheadInputStream.java:174)
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:3001)
+	at com.mysql.jdbc.MysqlIO.readPacket(MysqlIO.java:567)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1018)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2253)
+	at com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2104)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2088)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2533)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2503)
+	at com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:1369)
+	at me.eccentric_nz.TARDIS.database.ResultSetOccupied.resultSet(ResultSetOccupied.java:69)
+	at me.eccentric_nz.TARDIS.control.TARDISControlRunnable.run(TARDISControlRunnable.java:43)
+	at org.bukkit.craftbukkit.v1_11_R1.scheduler.CraftTask.run(CraftTask.java:53)
+	at org.bukkit.craftbukkit.v1_11_R1.scheduler.CraftScheduler.mainThreadHeartbeat(CraftScheduler.java:352)
+	at net.minecraft.server.v1_11_R1.MinecraftServer.D(MinecraftServer.java:689)
+	at net.minecraft.server.v1_11_R1.DedicatedServer.D(DedicatedServer.java:360)
+	at net.minecraft.server.v1_11_R1.MinecraftServer.C(MinecraftServer.java:650)
+
+-- Thread Dump --
+Details:
+	Threads: "process reaper" Id=762 TIMED_WAITING on java.util.concurrent.SynchronousQueue$TransferStack@68281e6e
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.SynchronousQueue$TransferStack@68281e6e
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460)
+	at java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362)
+	at java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:941)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1066)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	...
+
+
+"Chunk I/O Executor Thread-1" Id=36 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@66efed1b
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@66efed1b
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+"File IO Thread" Id=30 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at net.minecraft.server.v1_11_R1.FileIOThread.c(SourceFile:51)
+	at net.minecraft.server.v1_11_R1.FileIOThread.run(SourceFile:30)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+"Server Watchdog" Id=27 RUNNABLE
+	at sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:454)
+	at net.minecraft.server.v1_11_R1.ThreadWatchdog.run(SourceFile:43)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+"Netty Epoll Server IO #3" Id=24 RUNNABLE (in native)
+	at io.netty.channel.epoll.Native.epollWait(Native Method)
+	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:194)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:219)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+"Netty Epoll Server IO #2" Id=23 RUNNABLE (in native)
+	at io.netty.channel.epoll.Native.epollWait(Native Method)
+	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:194)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:219)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+"Abandoned connection cleanup thread" Id=26 TIMED_WAITING on java.lang.ref.ReferenceQueue$Lock@62d0751e
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@62d0751e
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+	at com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:43)
+
+
+"Netty Epoll Server IO #1" Id=22 RUNNABLE
+	at io.netty.channel.epoll.Native.epollWait(Native Method)
+	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:194)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:219)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+"Netty Epoll Server IO #0" Id=21 RUNNABLE
+	at io.netty.channel.epoll.Native.epollWait(Native Method)
+	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:194)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:219)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+"Server console handler" Id=18 RUNNABLE (in native)
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(FileInputStream.java:255)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	-  locked java.io.BufferedInputStream@27d2e720
+	at org.bukkit.craftbukkit.libs.jline.internal.NonBlockingInputStream.read(NonBlockingInputStream.java:169)
+	-  locked org.bukkit.craftbukkit.libs.jline.internal.NonBlockingInputStream@f2146da
+	at org.bukkit.craftbukkit.libs.jline.internal.NonBlockingInputStream.read(NonBlockingInputStream.java:137)
+	at org.bukkit.craftbukkit.libs.jline.internal.NonBlockingInputStream.read(NonBlockingInputStream.java:246)
+	at org.bukkit.craftbukkit.libs.jline.internal.InputStreamReader.read(InputStreamReader.java:261)
+	-  locked org.bukkit.craftbukkit.libs.jline.internal.NonBlockingInputStream@f2146da
+	...
+
+
+"Thread-5" Id=19 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@163fe510
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@163fe510
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at com.mojang.util.QueueLogAppender.getNextLogEvent(QueueLogAppender.java:77)
+	at org.bukkit.craftbukkit.v1_11_R1.util.TerminalConsoleWriterThread.run(TerminalConsoleWriterThread.java:27)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+"DestroyJavaVM" Id=17 RUNNABLE
+
+
+"Server thread" Id=15 RUNNABLE (in native)
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:170)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at com.mysql.jdbc.util.ReadAheadInputStream.fill(ReadAheadInputStream.java:101)
+	at com.mysql.jdbc.util.ReadAheadInputStream.readFromUnderlyingStreamIfNecessary(ReadAheadInputStream.java:144)
+	at com.mysql.jdbc.util.ReadAheadInputStream.read(ReadAheadInputStream.java:174)
+	-  locked com.mysql.jdbc.util.ReadAheadInputStream@77261a4c
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:3001)
+	...
+
+
+"Server Infinisleeper" Id=16 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at net.minecraft.server.v1_11_R1.DedicatedServer$1.run(DedicatedServer.java:58)
+
+
+"NonBlockingInputStreamThread" Id=13 WAITING on org.bukkit.craftbukkit.libs.jline.internal.NonBlockingInputStream@f2146da owned by "Server console handler" Id=18
+	at java.lang.Object.wait(Native Method)
+	-  waiting on org.bukkit.craftbukkit.libs.jline.internal.NonBlockingInputStream@f2146da
+	at org.bukkit.craftbukkit.libs.jline.internal.NonBlockingInputStream.run(NonBlockingInputStream.java:278)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+"Snooper Timer" Id=11 TIMED_WAITING on java.util.TaskQueue@426f91dc
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@426f91dc
+	at java.util.TimerThread.mainLoop(Timer.java:552)
+	at java.util.TimerThread.run(Timer.java:505)
+
+
+"Signal Dispatcher" Id=4 RUNNABLE
+
+
+"Finalizer" Id=3 WAITING on java.lang.ref.ReferenceQueue$Lock@2b91fbe4
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@2b91fbe4
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)
+
+
+"Reference Handler" Id=2 WAITING on java.lang.ref.Reference$Lock@6c2270a0
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.Reference$Lock@6c2270a0
+	at java.lang.Object.wait(Object.java:502)
+	at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
+
+
+
+Stacktrace:
+	at net.minecraft.server.v1_11_R1.ThreadWatchdog.run(SourceFile:59)
+	at java.lang.Thread.run(Thread.java:745)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.11.2
+	Operating System: Linux (amd64) version 4.4.0-57-generic
+	Java Version: 1.8.0_111, Oracle Corporation
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 400525984 bytes (381 MB) / 1037959168 bytes (989 MB) up to 1037959168 bytes (989 MB)
+	JVM Flags: 2 total; -Xmx1024M -Xms1024M
+	IntCache: cache: 0, tcache: 0, allocated: 12, tallocated: 98
+	CraftBukkit Information: 
+   Running: CraftBukkit version git-Bukkit-d5e7885 (MC: 1.11.2) (Implementing API version 1.11.2-R0.1-SNAPSHOT) true
+   Plugins: { TARDISChunkGenerator v2.5.1 me.eccentric_nz.tardischunkgenerator.TARDISHelper [eccentric_nz], PermissionsBukkit v2.5 com.platymuus.bukkit.permissions.PermissionsPlugin [SpaceManiac], WormholeXTreme v2.0 de.luricos.bukkit.WormholeXTreme.Wormhole.WormholeXTreme [Lologarithm, alron, lycano], Multiverse-Core v2.5-b717 com.onarandombox.MultiverseCore.MultiverseCore [Rigby, fernferret, lithium3141, main--], TARDIS v3.7-b1592 me.eccentric_nz.TARDIS.TARDIS [eccentric_nz],}
+   Warnings: DEFAULT
+   Reload Count: 0
+   Threads: { RUNNABLE DestroyJavaVM: [], RUNNABLE Server Watchdog: [java.lang.Thread.dumpThreads(Native Method), java.lang.Thread.getAllStackTraces(Thread.java:1607), org.bukkit.craftbukkit.v1_11_R1.CraftCrashReport.call(CraftCrashReport.java:30), net.minecraft.server.v1_11_R1.CrashReportSystemDetails.a(SourceFile:78), net.minecraft.server.v1_11_R1.CrashReport.h(CrashReport.java:126), net.minecraft.server.v1_11_R1.CrashReport.<init>(CrashReport.java:33), net.minecraft.server.v1_11_R1.ThreadWatchdog.run(SourceFile:57), java.lang.Thread.run(Thread.java:745)], RUNNABLE Server console handler: [java.io.FileInputStream.readBytes(Native Method), java.io.FileInputStream.read(FileInputStream.java:255), java.io.BufferedInputStream.fill(BufferedInputStream.java:246), java.io.BufferedInputStream.read(BufferedInputStream.java:265), org.bukkit.craftbukkit.libs.jline.internal.NonBlockingInputStream.read(NonBlockingInputStream.java:169), org.bukkit.craftbukkit.libs.jline.internal.NonBlockingInputStream.read(NonBlockingInputStream.java:137), org.bukkit.craftbukkit.libs.jline.internal.NonBlockingInputStream.read(NonBlockingInputStream.java:246), org.bukkit.craftbukkit.libs.jline.internal.InputStreamReader.read(InputStreamReader.java:261), org.bukkit.craftbukkit.libs.jline.internal.InputStreamReader.read(InputStreamReader.java:198), org.bukkit.craftbukkit.libs.jline.console.ConsoleReader.readCharacter(ConsoleReader.java:2145), org.bukkit.craftbukkit.libs.jline.console.ConsoleReader.readLine(ConsoleReader.java:2349), net.minecraft.server.v1_11_R1.DedicatedServer$2.run(DedicatedServer.java:83)], RUNNABLE Signal Dispatcher: [], TIMED_WAITING File IO Thread: [java.lang.Thread.sleep(Native Method), net.minecraft.server.v1_11_R1.FileIOThread.c(SourceFile:51), net.minecraft.server.v1_11_R1.FileIOThread.run(SourceFile:30), java.lang.Thread.run(Thread.java:745)], WAITING NonBlockingInputStreamThread: [java.lang.Object.wait(Native Method), org.bukkit.craftbukkit.libs.jline.internal.NonBlockingInputStream.run(NonBlockingInputStream.java:278), java.lang.Thread.run(Thread.java:745)], TIMED_WAITING Snooper Timer: [java.lang.Object.wait(Native Method), java.util.TimerThread.mainLoop(Timer.java:552), java.util.TimerThread.run(Timer.java:505)], TIMED_WAITING process reaper: [sun.misc.Unsafe.park(Native Method), java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215), java.util.concurrent.SynchronousQueue$TransferStack.awaitFulfill(SynchronousQueue.java:460), java.util.concurrent.SynchronousQueue$TransferStack.transfer(SynchronousQueue.java:362), java.util.concurrent.SynchronousQueue.poll(SynchronousQueue.java:941), java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1066), java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127), java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617), java.lang.Thread.run(Thread.java:745)], WAITING Reference Handler: [java.lang.Object.wait(Native Method), java.lang.Object.wait(Object.java:502), java.lang.ref.Reference.tryHandlePending(Reference.java:191), java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)], RUNNABLE Netty Epoll Server IO #3: [io.netty.channel.epoll.Native.epollWait(Native Method), io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:194), io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:219), io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116), java.lang.Thread.run(Thread.java:745)], RUNNABLE Netty Epoll Server IO #2: [io.netty.channel.epoll.Native.epollWait(Native Method), io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:194), io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:219), io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116), java.lang.Thread.run(Thread.java:745)], RUNNABLE Server thread: [java.net.SocketInputStream.socketRead0(Native Method), java.net.SocketInputStream.socketRead(SocketInputStream.java:116), java.net.SocketInputStream.read(SocketInputStream.java:170), java.net.SocketInputStream.read(SocketInputStream.java:141), com.mysql.jdbc.util.ReadAheadInputStream.fill(ReadAheadInputStream.java:101), com.mysql.jdbc.util.ReadAheadInputStream.readFromUnderlyingStreamIfNecessary(ReadAheadInputStream.java:144), com.mysql.jdbc.util.ReadAheadInputStream.read(ReadAheadInputStream.java:174), com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:3001), com.mysql.jdbc.MysqlIO.readPacket(MysqlIO.java:567), com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1018), com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2253), com.mysql.jdbc.ConnectionImpl.connectWithRetries(ConnectionImpl.java:2104), com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2088), com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2533), com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2503), com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:1369), me.eccentric_nz.TARDIS.database.ResultSetOccupied.resultSet(ResultSetOccupied.java:69), me.eccentric_nz.TARDIS.control.TARDISControlRunnable.run(TARDISControlRunnable.java:43), org.bukkit.craftbukkit.v1_11_R1.scheduler.CraftTask.run(CraftTask.java:53), org.bukkit.craftbukkit.v1_11_R1.scheduler.CraftScheduler.mainThreadHeartbeat(CraftScheduler.java:352), net.minecraft.server.v1_11_R1.MinecraftServer.D(MinecraftServer.java:689), net.minecraft.server.v1_11_R1.DedicatedServer.D(DedicatedServer.java:360), net.minecraft.server.v1_11_R1.MinecraftServer.C(MinecraftServer.java:650), net.minecraft.server.v1_11_R1.MinecraftServer.run(MinecraftServer.java:554), java.lang.Thread.run(Thread.java:745)], WAITING Chunk I/O Executor Thread-1: [sun.misc.Unsafe.park(Native Method), java.util.concurrent.locks.LockSupport.park(LockSupport.java:175), java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039), java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442), java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067), java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127), java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617), java.lang.Thread.run(Thread.java:745)], WAITING Thread-5: [sun.misc.Unsafe.park(Native Method), java.util.concurrent.locks.LockSupport.park(LockSupport.java:175), java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039), java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442), com.mojang.util.QueueLogAppender.getNextLogEvent(QueueLogAppender.java:77), org.bukkit.craftbukkit.v1_11_R1.util.TerminalConsoleWriterThread.run(TerminalConsoleWriterThread.java:27), java.lang.Thread.run(Thread.java:745)], TIMED_WAITING Abandoned connection cleanup thread: [java.lang.Object.wait(Native Method), java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143), com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:43)], RUNNABLE Netty Epoll Server IO #0: [io.netty.channel.epoll.Native.epollWait(Native Method), io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:194), io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:219), io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116), java.lang.Thread.run(Thread.java:745)], TIMED_WAITING Server Infinisleeper: [java.lang.Thread.sleep(Native Method), net.minecraft.server.v1_11_R1.DedicatedServer$1.run(DedicatedServer.java:58)], WAITING Finalizer: [java.lang.Object.wait(Native Method), java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143), java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164), java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)], RUNNABLE Netty Epoll Server IO #1: [io.netty.channel.epoll.Native.epollWait(Native Method), io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:194), io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:219), io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:116), java.lang.Thread.run(Thread.java:745)],}
+   Recent tasks from 1017169-1017199{TARDIS:me.eccentric_nz.TARDIS.database.TARDISRecordingTask@1017198,TARDIS:me.eccentric_nz.TARDIS.database.TARDISRecordingTask@1017203,TARDIS:me.eccentric_nz.TARDIS.database.TARDISRecordingTask@1017208,TARDIS:me.eccentric_nz.TARDIS.database.TARDISRecordingTask@1017213,TARDIS:me.eccentric_nz.TARDIS.database.TARDISRecordingTask@1017218,TARDIS:me.eccentric_nz.TARDIS.database.TARDISRecordingTask@1017223,TARDIS:me.eccentric_nz.TARDIS.database.TARDISRecordingTask@1017228,}
+	Profiler Position: N/A (disabled)
+	Player Count: 0 / 20; []
+	Is Modded: Definitely; Server brand changed to 'CraftBukkit'
+	Type: Dedicated Server (map_server.txt)
